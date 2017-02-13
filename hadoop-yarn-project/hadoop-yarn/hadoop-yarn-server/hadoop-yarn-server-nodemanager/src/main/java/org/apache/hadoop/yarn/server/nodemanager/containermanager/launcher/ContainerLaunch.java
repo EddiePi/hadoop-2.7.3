@@ -553,6 +553,12 @@ public class ContainerLaunch implements Callable<Integer> {
 
   private static final class UnixShellScriptBuilder extends ShellScriptBuilder {
 
+    @Override
+    public void cd(String path){
+      line("cd \"", path,"\"");
+      line();
+    }
+    
     private void errorCheck() {
       line("hadoop_shell_errorcode=$?");
       line("if [ $hadoop_shell_errorcode -ne 0 ]");
@@ -592,7 +598,7 @@ public class ContainerLaunch implements Callable<Integer> {
 
   private static final class WindowsShellScriptBuilder
       extends ShellScriptBuilder {
-    
+
     @Override
     public void cd(String path){
       line("cd \"", path,"\"");
