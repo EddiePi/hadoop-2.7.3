@@ -145,8 +145,11 @@ public class DockerContainerExecutor extends ContainerExecutor {
                              Path nmPrivateContainerScriptPath, Path nmPrivateTokensPath,
                              String userName, String appId, Path containerWorkDir,
                              List<String> localDirs, List<String> logDirs) throws IOException {
-    String containerImageName = container.getLaunchContext().getEnvironment()
-        .get(YarnConfiguration.NM_DOCKER_CONTAINER_EXECUTOR_IMAGE_NAME);
+    String containerImageName = getConf().get(YarnConfiguration.NM_DOCKER_CONTAINER_EXECUTOR_IMAGE_NAME,
+            YarnConfiguration.NM_DEFAULT_DOCKER_CONTAINER_EXECUTOR_IMAGE_NAME);
+
+//    String containerImageName = container.getLaunchContext().getEnvironment()
+//        .get(YarnConfiguration.NM_DOCKER_CONTAINER_EXECUTOR_IMAGE_NAME);
     if (LOG.isDebugEnabled()) {
       LOG.debug("containerImageName from launchContext: " + containerImageName);
     }

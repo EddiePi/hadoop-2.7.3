@@ -984,6 +984,9 @@ public class YarnConfiguration extends Configuration {
   public static final String NM_DOCKER_CONTAINER_EXECUTOR_IMAGE_NAME =
     NM_PREFIX + "docker-container-executor.image-name";
 
+  public static final String NM_DEFAULT_DOCKER_CONTAINER_EXECUTOR_IMAGE_NAME =
+    NM_PREFIX + "default-docker-container0executor.image-name";
+
   /** The name of the docker executor (For DockerContainerExecutor).*/
   public static final String NM_DOCKER_CONTAINER_EXECUTOR_EXEC_NAME =
     NM_PREFIX + "docker-container-executor.exec-name";

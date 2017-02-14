@@ -558,7 +558,7 @@ public class ContainerLaunch implements Callable<Integer> {
       line("cd \"", path,"\"");
       line();
     }
-    
+
     private void errorCheck() {
       line("hadoop_shell_errorcode=$?");
       line("if [ $hadoop_shell_errorcode -ne 0 ]");
