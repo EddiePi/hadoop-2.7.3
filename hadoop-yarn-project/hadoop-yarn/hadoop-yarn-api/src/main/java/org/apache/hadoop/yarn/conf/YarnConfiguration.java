@@ -985,7 +985,7 @@ public class YarnConfiguration extends Configuration {
     NM_PREFIX + "docker-container-executor.image-name";
 
   public static final String NM_DEFAULT_DOCKER_CONTAINER_EXECUTOR_IMAGE_NAME =
-    NM_PREFIX + "default-docker-container0executor.image-name";
+    "sequenceiq/hadoop-docker:2.7.1";
 
   /** The name of the docker executor (For DockerContainerExecutor).*/
   public static final String NM_DOCKER_CONTAINER_EXECUTOR_EXEC_NAME =
