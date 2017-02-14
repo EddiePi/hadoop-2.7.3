@@ -215,6 +215,7 @@ public class DockerContainerExecutor extends ContainerExecutor {
         .append(" ")
         .append(containerImageName)
         .toString();
+    LOG.info("docker start string: " + commandStr);
     String dockerPidScript = "`" + dockerExecutor + " inspect --format {{.State.Pid}} " + containerIdStr + "`";
     // Create new local launch wrapper script
     LocalWrapperScriptBuilder sb =
